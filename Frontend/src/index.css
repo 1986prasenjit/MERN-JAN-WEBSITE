@@ -1,0 +1,6 @@
+@import "tailwindcss";
+
+body {
+	font-family: "mono", monospace;
+    background-color: #f5f5f5;
+}
