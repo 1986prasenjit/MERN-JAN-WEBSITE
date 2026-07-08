@@ -170,7 +170,7 @@ const cards=[
 
       <section className="w-full py-20 flex flex-col items-center justify-center gap-4 px-8 lg:px-10">
         <h1 className="text-3xl sm:text-4xl  lg:text-5xl font-bold">Meet The Team</h1>
-        <p className="text-xs sm:text-sm lg:text-base  opacity-70">The Visionari Behind LUXE </p>
+        <p className="text-xs sm:text-sm lg:text-base  opacity-70">The Visionari Behind LUXES </p>
         <div  className="grid grid-cols-1 sm:grid-cols-2  lg:grid-cols-4 gap-10 mt-5  ">
      {
       cards.map((item, index) => (
