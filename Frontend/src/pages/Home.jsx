@@ -1,10 +1,9 @@
-import Cards from "../components/Cards";
 import FeatureProducts from "../components/FeatureProducts";
 import HeadingText from "../components/HeadingText";
 import HeroImg from "../components/HeroImg";
 import useDataContext from "../customHooks/useDataContext";
 const Home = () => {
-  const { loading, error, product } = useDataContext();
+  const { loading, error } = useDataContext();
 
   if (loading) {
     return <p className="text-center text-2xl mt-10">Loading products...</p>;
