@@ -5,7 +5,9 @@ import Collections from "./pages/Collections"
 import About from "./pages/About"
 import Layout from "./components/Layout"
 
+
 const App = () => {
+
   return (
     <>
       <Routes>
