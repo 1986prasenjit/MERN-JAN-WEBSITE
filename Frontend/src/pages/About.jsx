@@ -112,7 +112,7 @@ const cards=[
   }
 ]
   return (
-    <>
+    <main className="max-w-10xl mx-auto" >
       <section className="w-full flex flex-col items-center justify-center  gap-5 p-8 lg:py-20">
         <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold">
           Our Journey
@@ -194,7 +194,7 @@ const cards=[
      }
      </div>
       </section>
-    </>
+    </main>
   );
 };
 
