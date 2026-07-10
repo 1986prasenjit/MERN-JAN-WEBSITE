@@ -12,7 +12,7 @@ const NewArrival = () => {
     const [isOpen,setIsOpen]=useState(false);
     function handleClick(){
       setIsOpen(!isOpen);
-      console.log("clicked");
+      
     }
     
   return (
