@@ -16,15 +16,41 @@ export default function FeatureProducts() {
 
   return (
     <div className="w-full text-center">
-      <h2 className=" text-xl font-bold  ">
-        Current Category: {category.toUpperCase()}
+      <h2 className=" text-xl font-bold">
+        Current Category:{" "}
+        <span className="text-2xl font-bold text-red-600">
+          {category.toUpperCase()}
+        </span>
       </h2>
       <nav className="flex items-center justify-center gap-4 mt-4">
-        <button className="w-48 rounded-md px-4 py-2 bg-[#1A56DB] text-white text-2xl font-semibold" onClick={() => setCategory("beauty")}>Beauty</button>
-        <button className="w-48 rounded-md px-4 py-2 bg-[#1A56DB] text-white text-2xl font-semibold" onClick={() => setCategory("furniture")}>Furniture</button>
-        <button className="w-48 rounded-md px-4 py-2 bg-[#1A56DB] text-white text-2xl font-semibold" onClick={() => setCategory("groceries")}>Groceries</button>
-        <button className="w-48 rounded-md px-4 py-2 bg-[#1A56DB] text-white text-2xl font-semibold" onClick={() => setCategory("fragrances")}>Beauty</button>
-        <button className="w-48 rounded-md bg-[#1A56DB] text-white px-4 py-2 text-2xl font-semibold" onClick={() => setCategory("kitchen-accessories")}>
+        <button
+          className="w-48 rounded-md px-4 py-2 bg-[#1A56DB] text-white text-2xl font-semibold"
+          onClick={() => setCategory("beauty")}
+        >
+          Beauty
+        </button>
+        <button
+          className="w-48 rounded-md px-4 py-2 bg-[#1A56DB] text-white text-2xl font-semibold"
+          onClick={() => setCategory("furniture")}
+        >
+          Furniture
+        </button>
+        <button
+          className="w-48 rounded-md px-4 py-2 bg-[#1A56DB] text-white text-2xl font-semibold"
+          onClick={() => setCategory("groceries")}
+        >
+          Groceries
+        </button>
+        <button
+          className="w-48 rounded-md px-4 py-2 bg-[#1A56DB] text-white text-2xl font-semibold"
+          onClick={() => setCategory("fragrances")}
+        >
+          Beauty
+        </button>
+        <button
+          className="w-48 rounded-md bg-[#1A56DB] text-white px-4 py-2 text-2xl font-semibold"
+          onClick={() => setCategory("kitchen-accessories")}
+        >
           Accessories
         </button>
       </nav>
