@@ -1,12 +1,10 @@
 import img from "../images/about/image.jpg";
-import Cards from "../components/Cards.jsx";
 import WorkspacePremiumOutlinedIcon from "@mui/icons-material/WorkspacePremiumOutlined";
 import SportsMotorsportsOutlinedIcon from "@mui/icons-material/SportsMotorsportsOutlined";
 import GroupOutlinedIcon from "@mui/icons-material/GroupOutlined";
 import LanguageOutlinedIcon from "@mui/icons-material/LanguageOutlined";
 import SupportAgentOutlinedIcon from "@mui/icons-material/SupportAgentOutlined";
 import HomeRepairServiceOutlinedIcon from "@mui/icons-material/HomeRepairServiceOutlined";
-import cardimg from "../assets/living.png";
 import imgOne from "../images/about/img-one.jpg"
 import imgTwo from "../images/about/img-two.jpg"
 import imgThree from "../images/about/img-three.jpg"
@@ -129,14 +127,15 @@ const cards=[
           <img
             className="w-100 lg:h-150 sm:w-120 lg:w-210 rounded-xl"
             src={img}
+            alt="Hero section img where discount are shown"
           />
         </div>
         <div className=" flex flex-col items-center lg:items-start  justify-center gap-4">
           <h1 className=" font-bold text-3xl sm:text-4xl lg:text-5xl">
             Our Values
           </h1>
-          {values.map((item, index) => (
-     <div key={index} className="border border-black/15 p-6 shadow-lg flex flex-col gap-3 ">
+          {values.map((item) => (
+     <div key={item.id} className="border border-black/15 p-6 shadow-lg flex flex-col gap-3 ">
             <h2 className="text-sm sm:text-base font-bold  text-[#1A56DB]  lg:text-lg flex items-center sm:justify-center lg:justify-start  gap-2 ">
               <span>
                 {item.icon}
@@ -154,8 +153,8 @@ const cards=[
 
       <section className="w-full bg-gray-200 py-20 grid grid-cols-2 lg:grid-cols-4 gap-4   p-8">
         {
-          box.map((item, index) => (
-            <div key={index} className="flex flex-col gap-1 lg:gap-3 items-center justify-center">
+          box.map((item) => (
+            <div key={item.id} className="flex flex-col gap-1 lg:gap-3 items-center justify-center">
          {item.icon}
           <h1 className="text-2xl lg:text-3xl">{item.value}</h1>
           <p className=" uppercase text-xs lg:text-sm opacity-50 font-bold text-nowrap">
@@ -173,13 +172,14 @@ const cards=[
         <p className="text-xs sm:text-sm lg:text-base  opacity-70">The Visionari Behind LUXES </p>
         <div  className="grid grid-cols-1 sm:grid-cols-2  lg:grid-cols-4 gap-10 mt-5  ">
      {
-      cards.map((item, index) => (
+      cards.map((item) => (
         
-       <div key={index} className="w-full   bg-gray-100 flex flex-col items-center justify-center border border-black/15 shadow-lg  rounded-lg px-15 py-6 gap-3">
+       <div key={item.id} className="w-full   bg-gray-100 flex flex-col items-center justify-center border border-black/15 shadow-lg  rounded-lg px-15 py-6 gap-3">
      <div className="w-28 h-28 sm:w-32 sm:h-32 lg:w-36 lg:h-36 rounded-full overflow-hidden">
             <img
               src={item.img}
               className="w-full h-full object-cover object-center"
+              alt="Team member"
             />
           </div>
      <p className="font-bold text-nowrap">{item.title}</p>

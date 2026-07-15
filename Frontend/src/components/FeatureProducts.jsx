@@ -45,7 +45,7 @@ export default function FeatureProducts() {
           className="w-48 rounded-md px-4 py-2 bg-[#1A56DB] text-white text-2xl font-semibold"
           onClick={() => setCategory("fragrances")}
         >
-          Beauty
+          Fragrances
         </button>
         <button
           className="w-48 rounded-md bg-[#1A56DB] text-white px-4 py-2 text-2xl font-semibold"

@@ -1,7 +1,8 @@
 import Cards from "../components/Cards";
 import useDataContext from "../customHooks/useDataContext";
+
 const Collections = () => {
-  const {loading, error, product} = useDataContext();
+  const { loading, error, product } = useDataContext();
 
   if (loading) {
     return <p className="text-center text-2xl mt-10">Loading products...</p>;
@@ -12,15 +13,11 @@ const Collections = () => {
   }
 
   return (
-    <>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
-        {
-        product.map((product) => (
-          <Cards key={product.id} product={product} />
-        ))
-      }
-      </div>
-    </>
+    <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
+      {product.map((product) => (
+        <Cards key={product.id} product={product} />
+      ))}
+    </section>
   );
 };
 
