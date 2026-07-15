@@ -1,4 +1,5 @@
 import { User } from "../models/user.model.js";
+import {ApiError} from "../utils/apiError.js";
 
 const generateAccessTokenAndRefreshToken = async (userId) => {
   try {
@@ -15,18 +16,18 @@ const generateAccessTokenAndRefreshToken = async (userId) => {
     );
   }
 };
-const registerUser = async (req, res) => {
+const registerUser = async (req, res,next) => {
   const { name, email, password } = req.body;
   if (!name || !email || !password) {
-    res.status(400).json({ message: "All fiels required" });
+  return next(new ApiError(400, "All field required"));
   }
 
   const existingUser = await User.findOne({ email });
 
   if (existingUser) {
-    res.status(409).json({
-      message: "User Already exists",
-    });
+    return next(
+      new ApiError(409, "Sorry, Authentication failed, Email-ID already exists")
+    );
   }
 
   const createUser = await User.create({ name, email, password });
@@ -36,23 +37,25 @@ const registerUser = async (req, res) => {
     .json({ message: "User create successfully", user: createUser });
 };
 
-const loginUser = async (req, res) => {
+const loginUser = async (req, res,next) => {
   const { email, password } = req.body;
 
   if (!email || !password) {
-    res.status(400).json({ message: "All field required" });
+   return next(new ApiError(400, "All field required"));
   }
 
   const user = await User.findOne({ email });
 
   if (!user) {
-    res.status(404).json({ message: "User not found" });
+   return next(
+     new ApiError(404, "Sorry, Authentication failed, User not found")
+   );
   }
 
   const isPasswordCorrect = await user.isPasswordCorrect(password);
 
   if (!isPasswordCorrect) {
-    res.status(401).json({ message: "Invalid Password" });
+  return next(new ApiError(401, "Sorry, Authentication failed"));
   }
 
   const { accessToken, refreshToken } =
